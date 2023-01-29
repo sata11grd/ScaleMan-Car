@@ -25,6 +25,8 @@ namespace ScaleMan
         [SerializeField] private float scaleOfBig;
         [SerializeField] private float minSpeed;
         [SerializeField] private float maxSpeed;
+        [SerializeField] private float minMass;
+        [SerializeField] private float maxMass;
 
         /// <summary>
         /// ジャンプ時に加える力です。
@@ -182,6 +184,10 @@ namespace ScaleMan
             // スライダーの値に応じてキャラクターサイズの更新
             var scale = Mathf.Lerp(scaleOfSmall, scaleOfBig, sliderManager.GetValue());
             playerModel.transform.localScale = new Vector3(scale, scale, scale);
+
+            // スライダーの値に応じて重さ更新
+            var mass = Mathf.Lerp(minMass, maxMass, sliderManager.GetValue());
+            rb.mass = mass;
 
             // トレイルエフェクト(小さいときにプレイヤーの後ろについてくるエフェクト)の更新
             if (animator.GetFloat("sprint_speed") > 0.1f)
