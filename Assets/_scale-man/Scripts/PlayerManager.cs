@@ -73,9 +73,13 @@ namespace ScaleMan
                 // でかい時に接触したらジャンプ
                 if (sliderManager.GetValue() >= 0.7f)
                 {
-                    StartCoroutine(JumpCoroutine());
-                    Destroy(collision.gameObject);
+                    // 障害物を乗り越えるために無理やりtransformで車を回転
+                    transform.Rotate(new Vector3(-18, 0, 0));
 
+                    // rb.AddForce(jumpForce);
+                    Destroy(collision.gameObject);
+                    StartCoroutine(JumpCoroutine());
+                    
                     StartCoroutine(PlayLandingFxCoroutine(1f));
                 }
             }
@@ -124,6 +128,8 @@ namespace ScaleMan
             animator.SetFloat("run_speed", 0);
             animator.SetFloat("sprint_speed", 0);
             animator.SetBool("jump", true);
+            Debug.Log("ジャーーーーーーンプ！！！");
+            
             rb.AddForce(jumpForce);
             GetComponent<Collider>().enabled = false;
 
@@ -148,6 +154,10 @@ namespace ScaleMan
 
         private void Update()
         {
+
+            // 関係なさそう
+            // rb = this.GetComponent<Rigidbody>();
+
             // 移動処理
             // ジャンプ中または倒れているときは移動しないようにします。
             if (!_isJumping && !_isDown)
