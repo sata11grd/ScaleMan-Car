@@ -21,6 +21,8 @@ namespace ScaleMan
         [SerializeField] private Rigidbody rb;
         [SerializeField] private float minSpeed;
         [SerializeField] private float maxSpeed;
+        [SerializeField] private float minMass;
+        [SerializeField] private float maxMass;
         [SerializeField] private Vector3 jumpForce;
         [SerializeField] private float jumpTime;
         [SerializeField] private float downTime;
@@ -221,6 +223,10 @@ namespace ScaleMan
             // キャラクターサイズの更新
             var scale = Mathf.Lerp(scaleOfSmall, scaleOfBig, _sliderValue);
             comModel.transform.localScale = new Vector3(scale, scale, scale);
+
+            // 重さ更新
+            var mass = Mathf.Lerp(minMass, maxMass, _sliderValue);
+            rb.mass = mass;
 
             // エフェクトの更新
             if (animator.GetFloat("sprint_speed") > 0.1f)
