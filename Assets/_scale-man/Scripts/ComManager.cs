@@ -60,8 +60,11 @@ namespace ScaleMan
             // 最初にスライダーを0.3にセットしておきます。
             SetSliderValue(value: 0.1f);
 
-            // 0.5秒後に1秒間かけて0.8までスライダーを移動します。
-            SetSliderValueSmoothly(delay:2f, value: 0.8f, duration: 1f);
+            // 2秒後に1秒間かけて0.8までスライダーを移動します。
+            SetSliderValueSmoothly(delay:2f, value: 1.5f, duration: 1f);
+
+            // 6秒後に0.5秒間かけて0.01までスライダーを移動します。
+            SetSliderValueSmoothly(delay:6f, value: 0.01f, duration: 0.5f);
 
             // 以下、何秒後に何秒かけてどの値までスライダーを移動するか、というように指定していきます...
         }

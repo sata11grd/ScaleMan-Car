@@ -165,7 +165,7 @@ namespace ScaleMan
                 // 移動スピードの更新
                 var speed = Mathf.Lerp(minSpeed, maxSpeed, 1 - sliderManager.GetValue());
                 rb.velocity = new Vector3(0, rb.velocity.y, speed);
-                Debug.Log("rb.velocity == " + rb.velocity);
+                // Debug.Log("rb.velocity == " + rb.velocity);
 
 
                 if (0 <= sliderManager.GetValue() && sliderManager.GetValue() < 0.3f)
