@@ -53,6 +53,11 @@ namespace ScaleMan
         /// </summary>
         [SerializeField] private Vector3 blowTorque;
 
+        // [SerializeField] private Vector3 blowTorque;
+
+        [SerializeField] private GameObject Start_UI;
+
+
         private bool _isJumping;
         private bool _isDown;
 
@@ -154,6 +159,11 @@ namespace ScaleMan
 
         private void Update()
         {
+            if(Start_UI.activeSelf == true)
+                {
+                    return;
+                }
+
 
             // ŠÖŒW‚È‚³‚»‚¤
             // rb = this.GetComponent<Rigidbody>();

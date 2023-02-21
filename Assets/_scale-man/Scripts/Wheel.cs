@@ -14,6 +14,6 @@ public class Wheel : MonoBehaviour
     void Update()
     {
         // タイヤを回転させるスクリプト
-        transform.Rotate(new Vector3(6, 0, 0));
+        transform.Rotate(new Vector3(0, 0, 6));
     }
 }

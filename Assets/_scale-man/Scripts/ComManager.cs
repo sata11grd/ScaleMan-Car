@@ -43,6 +43,8 @@ namespace ScaleMan
         [SerializeField] private ParticleSystem landingFx;
         [SerializeField] private Transform hitFxPoint;
 
+        [SerializeField] private GameObject Start_UI;
+
         private bool _isJumping;
         private bool _isDown;
         private float _sliderValue;
@@ -193,6 +195,14 @@ namespace ScaleMan
 
         private void Update()
         {
+
+        if(Start_UI.activeSelf == true)
+            {
+                return;
+            }
+
+
+
             if (!_isJumping && !_isDown)
             {
                 // 移動スピードの更新
@@ -219,7 +229,8 @@ namespace ScaleMan
                 }
                 else
                 {
-                    throw new NotImplementedException();
+                    // めちゃめちゃエラー出たので、一旦コメントアウトしてます。
+                    // throw new NotImplementedException();
                 }
             }
 
