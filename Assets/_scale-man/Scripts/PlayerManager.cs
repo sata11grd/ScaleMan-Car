@@ -154,7 +154,6 @@ namespace ScaleMan
 
         private void Update()
         {
-
             // 関係なさそう
             // rb = this.GetComponent<Rigidbody>();
 
@@ -165,8 +164,7 @@ namespace ScaleMan
                 // 移動スピードの更新
                 var speed = Mathf.Lerp(minSpeed, maxSpeed, 1 - sliderManager.GetValue());
                 rb.velocity = new Vector3(0, rb.velocity.y, speed);
-                // Debug.Log("rb.velocity == " + rb.velocity);
-
+                transform.eulerAngles = new Vector3(0, 0, 0);
 
                 if (0 <= sliderManager.GetValue() && sliderManager.GetValue() < 0.3f)
                 {

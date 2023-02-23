@@ -219,7 +219,7 @@ namespace ScaleMan
                 }
                 else
                 {
-                    throw new NotImplementedException();
+                    //throw new NotImplementedException();
                 }
             }
 
