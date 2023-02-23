@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
+using BitCrewStudio.ScaleCar3D;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,11 +15,15 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject Goal_UI;
 
+    [SerializeField] private PlayerManager playerManager;
+    [SerializeField] private ComManager comManager;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerManager.enabled = false;
+        comManager.enabled = false;
     }
 
     // Update is called once per frame
@@ -31,6 +36,8 @@ public class GameManager : MonoBehaviour
     public void PushStart()
     {
         Start_UI.SetActive(false);
+        playerManager.enabled = true;
+        comManager.enabled = true;
     }
 
     public void PushNext()
