@@ -18,10 +18,16 @@ namespace BitCrewStudio.ScaleCar3D
         [SerializeField] private ParticleSystem hitFx;
         [SerializeField] private Transform hitFxPoint;
 
+
+        [SerializeField] private GameObject Start_UI;
+         
+
         private void Awake()
         {
             // エフェクトをクローンしておきます。
             trailFx = Instantiate(trailFx);
+
+            var rigidbody = GetComponent<Rigidbody>();
         }
 
         private void OnCollisionEnter(Collision collision)
@@ -31,6 +37,14 @@ namespace BitCrewStudio.ScaleCar3D
 
         private void Update()
         {
+
+
+            // Startボタンが表示されている限り、ボールは動かさない。
+            if(Start_UI.activeSelf == true)
+            {
+                return;
+            }
+
             var scale = Mathf.Lerp(minScale, maxScale, sliderManager.GetValue());
             transform.localScale = Vector3.one * scale;
 

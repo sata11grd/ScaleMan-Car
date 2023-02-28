@@ -17,6 +17,8 @@ namespace BitCrewStudio.ScaleCar3D
         [SerializeField] private ParticleSystem hitFx;
         [SerializeField] private Transform hitFxPoint;
 
+        [SerializeField] private GameObject Start_UI;
+
         private float _sliderValue;
 
         private void Awake()
@@ -35,14 +37,31 @@ namespace BitCrewStudio.ScaleCar3D
         /// </summary>
         private void Start()
         {
-            // 最初にスライダーを0.3にセットしておきます。
+            // 最初にスライダーを0.1にセットしておきます。
             SetSliderValue(value: 0.1f);
 
-            // 2秒後に1秒間かけて0.8までスライダーを移動します。
-            SetSliderValueSmoothly(delay: 2f, value: 1.5f, duration: 1f);
+            // 2秒後に1秒間かけて1.0までスライダーを移動します。
+            SetSliderValueSmoothly(delay: 2f, value: 1.0f, duration: 1f);
 
             // 6秒後に0.5秒間かけて0.01までスライダーを移動します。
             SetSliderValueSmoothly(delay: 6f, value: 0.01f, duration: 0.5f);
+ 
+            // 8秒後に0.5秒間かけて1.0までスライダーを移動します。
+            SetSliderValueSmoothly(delay: 13f, value: 1.0f, duration: 0.5f);
+
+            // 15秒後に0.5秒間かけて0.2までスライダーを移動します。
+            SetSliderValueSmoothly(delay: 15f, value: 0.2f, duration: 0.5f);
+
+            // 20秒後に0.5秒間かけて1.0までスライダーを移動します。
+            SetSliderValueSmoothly(delay: 20f, value: 1f, duration: 1f);
+
+            // 23秒後に0.5秒間かけて0.05までスライダーを移動します。
+            SetSliderValueSmoothly(delay: 23f, value: 0.05f, duration: 0.5f);
+
+            // 25秒後に0.5秒間かけて0.05までスライダーを移動します。
+            SetSliderValueSmoothly(delay: 25f, value: 1f, duration: 1f);
+
+
 
             // 以下、何秒後に何秒かけてどの値までスライダーを移動するか、というように指定していきます...
         }
@@ -76,6 +95,13 @@ namespace BitCrewStudio.ScaleCar3D
 
         private void Update()
         {
+            // Startボタンが表示されている限り、ボールは動かさない。
+            if(Start_UI.activeSelf == true)
+            {
+                return;
+            }
+
+
             var scale = Mathf.Lerp(minScale, maxScale, _sliderValue);
             transform.localScale = Vector3.one * scale;
 
