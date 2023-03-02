@@ -23,8 +23,8 @@ MonoBehaviour:
   ironSourceIosChinaAppKey: 
   iosGameAnalyticsGameKey: 
   iosGameAnalyticsSecretKey: 
-  androidGameAnalyticsGameKey: d37c208c91137a23866d571b5ef40cf9
-  androidGameAnalyticsSecretKey: 145dabe4cb417d6397d276c0c99e8a82f5926f87
+  androidGameAnalyticsGameKey: 
+  androidGameAnalyticsSecretKey: 
   adMobIosAppId: 
   adMobIosChinaAppId: 
   adMobAndroidAppId: 

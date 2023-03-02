@@ -259,9 +259,9 @@ MonoBehaviour:
     6.7.1
 
     - fixes to max irld integration'
-  SignUpOpen: 1
-  StudioName: BitCrewStudio
-  GameName: Scale Car 3D
+  SignUpOpen: 0
+  StudioName: 
+  GameName: 
   OrganizationName: 
   OrganizationIdentifier: 
   EmailGA: koyo19931103@gmail.com

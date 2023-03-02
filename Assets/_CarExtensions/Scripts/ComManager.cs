@@ -47,10 +47,10 @@ namespace BitCrewStudio.ScaleCar3D
             SetSliderValueSmoothly(delay: 6f, value: 0.01f, duration: 0.5f);
  
             // 8秒後に0.5秒間かけて1.0までスライダーを移動します。
-            SetSliderValueSmoothly(delay: 13f, value: 1.0f, duration: 0.5f);
+            SetSliderValueSmoothly(delay: 12.5f, value: 1.0f, duration: 0.5f);
 
             // 15秒後に0.5秒間かけて0.2までスライダーを移動します。
-            SetSliderValueSmoothly(delay: 15f, value: 0.2f, duration: 0.5f);
+            SetSliderValueSmoothly(delay: 16f, value: 0.01f, duration: 0.5f);
 
             // 20秒後に0.5秒間かけて1.0までスライダーを移動します。
             SetSliderValueSmoothly(delay: 20f, value: 1f, duration: 1f);

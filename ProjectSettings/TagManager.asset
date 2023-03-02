@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Com
+  - Orange
   layers:
   - Default
   - TransparentFX
